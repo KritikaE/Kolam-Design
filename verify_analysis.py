@@ -101,6 +101,5 @@ if __name__ == "__main__":
             verify_analysis(image_file)
         else:
             print(f"Error: {image_file} not found locally.")
-        # Fallback to generation if file missing (optional, but good for safety)
         # generate_sample_kolam()
         # verify_analysis()
