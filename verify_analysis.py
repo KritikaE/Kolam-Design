@@ -24,33 +24,6 @@ def generate_sample_kolam(output_path="sample_kolam.png"):
     # Create figure without borders for cleaner image analysis
     fig, ax = plt.subplots(figsize=(6,6), facecolor='white') 
     ax.set_facecolor('white')
-    # Dots as black pixels for high contrast testing or specific color
-    # Vision module expects bright dots? 
-    # Current identify_chukkalu expects high Value (V channel). 
-    # Black dots on white background have LOW Value (V=0).
-    # White dots on dark background have HIGH Value.
-    
-    # Let's check main.py color scheme:
-    # fig facecolor #D3D3D3 (light gray)
-    # ax facecolor #FDF5E6 (light cream/white-ish)
-    # dots c='#BCBCBC' (light gray) => These are NOT very bright if background is white-ish. 
-    # BUT wait, vision.py handles real world images or these generated ones?
-    # "dots/Chukkalu" in trad kolam are white powder on dark ground.
-    
-    # If the user wants to analyze THEIR generated images (from main.py),
-    # main.py draws dots as #BCBCBC (Light Gray) on #FDF5E6 (Old Lace / Light Cream).
-    # #BCBCBC is V=74%. #FDF5E6 is V=99%.
-    # The dots are DARKER than the background in the generated image.
-    
-    # HOWEVER, the requirements mentioned "High-Intensity Thresholding to isolate Chukkalu".
-    # This implies the input images are expected to be traditional (white dots on dark floor) 
-    # OR the generator should produce accessible images.
-    
-    # IMPORTANT: 
-    # If I'm testing the analysis logic, I should generate an image that fits the "High-Intensity" assumption
-    # OR I adapt the test image to be "Dark Background, Bright Dots".
-    
-    # Let's generate a "Dark Mode" Kolam for verification to match the "High Intensity Dots" requirement.
     ax.set_facecolor('black')
     
     # Bright White Dots
